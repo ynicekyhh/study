@@ -83,6 +83,18 @@ public class Erdos {
 					Iterator<String> writerIterator = writerSet.iterator();
 					
 					/*
+					 * Map<distance, Set<String>> 형태의 집합 하나
+					 * Set에 거리별로 저장
+					 * 
+					 * 0은 Erdos
+					 * set 집합에서 Erdos가 contain되어 있으면 근접한애들을 1 Set에 다 저장
+					 * 
+					 * 1Set에서 하나씩 꺼내어 전체 Set에서 처음부터 검색
+					 * 검색 시 꺼내온 이름이 이미 key값이 0 ~ n인 map의 set에 있는지 확인 후 없으면 distance + 1의 set에 새로 저장...
+					 * 효율이 너무 떨어짐... 
+					 */
+					
+					/*
 					 * 1) writerSet에서 Erdos를 찾아서 value를 '0'으로 map에 저장
 					 * 2) 같은 set안의 녀석들을 '1'을 value로 map저장
 					 * 3) 이미 저장한 writerSet을 thesisSet에서 제거
